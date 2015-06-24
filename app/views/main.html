@@ -1,0 +1,78 @@
+<section class="bg-strip jumbotron">
+</section>
+<section class="venue">
+  <div class="container">
+    <h3 class="no-vmg text-thin">Bringing the best of the mobile world to Southeast Asia, and vice versa</h3>
+  </div>
+</section>
+<section id="marketing" class="blurb">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>The world’s most influential conference on mobile comes to Jakarta on August 11th. From Beijing to San Francisco and Tokyo to Bangalore, GMIC is the where the mobile community gathers to learn about the latest innovations and connect with industry thought leaders.</p>
+        <p>With the theme "Bringing the Best of the Mobile Internet World to Southeast Asia and Vice Versa," GMIC Jakarta strives to be a leading edge meeting of minds and talents. Mobile is extending far beyond the smartphone into all aspects of our lives. It continues to innovate and change forms from phones and tablets to health, home, cars, smart TVs to robots. Our devices are learning about us and talking amongst themselves to reshape the mobile industry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-lightgrey">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h4 class="color-spacegrey">In Jakarta We'll Discuss</h4>
+        <ul>
+          <li>Thought Leadership</li>
+          <li>Mobile Marketing &amp; Monetization</li>
+          <li>Internet of Things</li>
+          <li>Global Game Summit</li>
+          <li>G-startup</li>
+          <li>AppAttack</li>
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <img src="images/photo_learn.jpg" alt="Who Should Attend" class="img-responsive shadow-accent">
+        <h4 class="color-spacegrey">Who Should Attend</h4>
+        <p>Senior Level decision makers from leading companies in Mobile and IoT space, O2O Company Executives, Angel and Venture Capitalists, Mobile App and Game Developers</p>
+      </div>
+      <div class="col-sm-4">
+        <img src="images/photo_interact.jpg" alt="Why Attend" class="img-responsive shadow-accent">
+        <h4 class="color-spacegrey">Why Attend</h4>
+        <p>Learn about the latest trends in mobile internet and other cutting edge technologies, connect with mobile internet innovators</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="location" class="location bg-accent">
+  <div class="container-fluid">
+    <div class="row">
+        <leaflet id="map" defaults="defaults" center="center" markers="markers"></leaflet>
+    </div>
+  </div>
+</section>
+<section id="partners" class="partners bg-lightgrey">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3 class="text-thin color-spacegrey">Partners</h3>
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-2">
+      <a href="http://www.meetup.com/gdgeastbay/"><img src="/images/partners/partner-gdgeastbay.png" alt="GDG East Bay" class="img-responsive center-block"></a>
+    </div>
+  </div>
+</section>
+<section id="gmics" class="gmics text-center">
+  <div class="container">
+    <div class="row">
+      <h3 class="color-spacegrey text-center text-thin">GMIC Locations</h3>
+      <div class="col-sm-3" ng-repeat="event in gmics">
+        <div ng-if="event.url">
+          <a href="{{ event.url }}"><img ng-src="{{ event.img }}" alt="{{ event.name }}"><h5>{{ event.city }}</h5><span class="text-thin">{{ event.date }}</span></a>
+        </div>
+        <div ng-if="!event.url">
+          <a><img ng-src="{{ event.img }}" alt="{{ event.name }}"><h5>{{ event.city }}</h5><span class="text-thin">{{ event.date }}</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

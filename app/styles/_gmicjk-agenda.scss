@@ -1,0 +1,31 @@
+.sessions {
+  .session {
+    .title {
+      margin-bottom: 11px;
+    }
+    .time, .format, .topic {
+      @media (max-width: $screen-xs-max) {
+        font-size: 0.7em;
+      }
+      font-size: 0.8em;
+    }
+    .info {
+      border-left: 2px dotted $lightgrey;
+    }
+    [ng-click], [data-ng-click] {
+      cursor: pointer;
+    }
+    .event {
+      color: $brand-primary;
+    }
+    .break {
+      color: lighten($spacegrey,25%);
+    }
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $lightgrey;
+    &.last {
+      border-bottom: 0;
+    }
+  }
+}

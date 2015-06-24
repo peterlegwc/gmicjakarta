@@ -1,0 +1,133 @@
+.speakers-grid {
+  .box {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin-bottom: 1em;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 50;
+      background: linear-gradient(135deg, rgba(156,39,176,0.15) 0%, rgba(3,169,244,0.05) 50%, rgba(156,39,176,0.15) 100%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      background-color: transparent;
+      @extend .transition-fast;
+    }
+    &:hover::after {
+      background-color: rgba(0,0,0,0.5);
+    }
+    img {
+      position: relative;
+      width: 100%;
+      @extend .transition-fast;
+    }
+    &:hover img {
+      transform: scale3d(1.2, 1.2, 1);
+    }
+    &:hover .caption .details {
+      padding: 0 5px 5px;
+      max-height: 500px;
+      opacity: 1;
+      @extend .transition-fast;
+    }
+    .caption {
+      font-weight: 200;
+      z-index: 200;
+      background-color: rgba(0,0,0,0.5);
+      color: #fff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      -webkit-font-smoothing: antialiased; // safari fix
+      h5 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .details {
+        padding: 0px;
+        font-size: 12px;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        @extend .transition-fast;
+      }
+    }
+  }
+}
+.fs-dialog,
+.fs-dialog-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.fs-dialog {
+  position: fixed;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.fs-dialog-overlay {
+  position: absolute;
+  background: rgba(0,0,0,0.7);
+  opacity: 0;
+  @extend .transition-medium;
+}
+.fs-dialog-open .fs-dialog-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.fs-dialog-content {
+  width: 50%;
+  max-width: 560px;
+  min-width: 290px;
+  max-height: 60%;
+  overflow: auto;
+  background: #fff;
+  padding: 1em;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  font-size: 14px;
+  img {
+    width: 200px;
+    max-width: 100%;
+  }
+}
+.fs-dialog-open .fs-dialog-content {
+  pointer-events: auto;
+}
+.fs-dialog-open .fs-dialog-content,
+.fs-dialog-close .fs-dialog-content {
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+}
+.fs-dialog-open .fs-dialog-content {
+  animation-name: anim-open;
+}
+.fs-dialog-close .fs-dialog-content {
+  animation-name: anim-close;
+}
+@keyframes anim-open {
+  0% { opacity: 0; transform: scale3d(1.1, 1.1, 1); }
+  100% { opacity: 1; transform: scale3d(1, 1, 1); }
+}
+@keyframes anim-close {
+  0% { opacity: 1; }
+  100% { opacity: 0; transform: scale3d(0.9, 0.9, 1); }
+}

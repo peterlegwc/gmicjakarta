@@ -1,0 +1,26 @@
+/* Responsive: Portrait tablets and up */
+@media (min-width: $screen-sm-min) {
+  // desktop nav bar styles
+  .navbar-default {
+    background-color: rgba(255,255,255,0.95);
+    @extend .transition-fast;
+
+    .navbar-nav {
+      > li > a {
+        box-shadow: 0px inset;
+        @extend .transition-medium;
+      }
+      > li:hover > a {
+        @include top-shadow(5px,$spacegrey);
+      }
+      > li.active > a {
+        @include top-shadow(5px,$accent);
+        background-color: transparent;
+        &:hover {
+          @include top-shadow(5px,$accent);
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

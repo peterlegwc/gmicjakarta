@@ -1,0 +1,15 @@
+/* custom transition speeds */
+.transition-slow {
+  transition: all 0.5s ease-in-out;
+}
+.transition-medium {
+  transition: all 0.25s ease-in-out;
+}
+.transition-fast {
+  transition: all 0.2s ease-in-out;
+}
+
+/* custom box shadow */
+@mixin top-shadow($height, $color) {
+  box-shadow: 0px $height 0px 0px $color inset;
+}

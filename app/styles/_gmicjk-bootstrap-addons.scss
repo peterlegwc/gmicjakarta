@@ -1,0 +1,52 @@
+/* 5 column grid */
+.col-lg-2-4 {
+  @include make-lg-column(2.4)
+}
+.col-md-2-4 {
+  @include make-md-column(2.4)
+}
+.col-sm-2-4 {
+  @include make-sm-column(2.4);
+}
+.col-sm-offset-2-4 {
+  @include make-sm-column-offset(2.4);
+}
+.col-sm-offset-1-5 {
+  @include make-sm-column-offset(1.5);
+}
+/* bootstrap buttons */
+.btn {
+  @extend .transition-medium;
+}
+.btn-accent {
+  @include button-variant(#fff, $accent, darken($accent,5%));
+}
+.btn.outline {
+    background: none;
+}
+.btn-primary.outline {
+    border: 2px solid $brand-primary;
+    color: $brand-primary;
+}
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: darken($brand-primary,15%);
+    border-color: darken($brand-primary,15%);
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: darken($brand-primary,15%);
+    color: darken($brand-primary,15%);
+    box-shadow: none;
+}
+.btn-accent.outline {
+    border: 2px solid $accent;
+    color: $accent;
+}
+.btn-accent.outline:hover, .btn-accent.outline:focus, .btn-accent.outline:active, .btn-accent.outline.active, .open > .dropdown-toggle.btn-accent {
+    color: darken($accent,15%);
+    border-color: darken($accent,15%);
+}
+.btn-accent.outline:active, .btn-accent.outline.active {
+    border-color: darken($accent,15%);
+    color: darken($accent,15%);
+    box-shadow: none;
+}

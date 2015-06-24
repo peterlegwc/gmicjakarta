@@ -1,0 +1,19 @@
+// override bootstrap vars
+@import "gmicjk-variables";
+@import "gmicjk-mixins";
+
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+@import "font-awesome/scss/font-awesome";
+
+@import "gmicjk-bootstrap-addons";
+@import "gmicjk-external";
+
+@import "gmicjk-common";
+@import "gmicjk-bg-strips";
+@import "gmicjk-home";
+@import "gmicjk-speakers";
+@import "gmicjk-agenda";
+@import "gmicjk-passes-prices";
+@import "gmicjk-responsive";

@@ -1,0 +1,76 @@
+.venue {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $spacegrey;
+  color: #fff;
+  border-bottom: 1px solid $accent;
+}
+
+.blurb {
+  background-image: url('../images/bg_blocks.jpg');
+  background-position: top right;
+  background-repeat: repeat-y;
+}
+
+.location {
+  #map {
+    height: 50vh;
+  }
+}
+
+.speakers-home {
+  .speaker-desc {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .speaker-name {
+
+    }
+    .speaker-title {
+      font-size: 0.8em;
+    }
+    .speaker-company {
+      font-size: 0.8em;
+      font-weight: bold;
+      color: $spacegrey;
+    }
+  }
+}
+
+.topic {
+  cursor: pointer;
+}
+
+.partners {
+  img {
+    width: 200px;
+  }
+}
+
+.gmics {
+  h5 {
+    margin-bottom: 0;
+  }
+  a {
+    color: $spacegrey;
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      opacity: 1;
+      @extend .transition-medium;
+      @media (min-width: $screen-sm-min) {
+        opacity: 0.6;
+      }
+    }
+    &:hover {
+      color: $text-color;
+      text-decoration: none;
+      img {
+        @media (min-width: $screen-sm-min) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
