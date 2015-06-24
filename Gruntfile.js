@@ -248,21 +248,17 @@ module.exports = function (grunt) {
       }
     },
 
-    // Deploys to SFTP server
-    'sftp-deploy': {
+    // Deploy to FTP server
+    'ftp-deploy': {
       build: {
         auth: {
           host: '116.251.205.74',
           port: 21,
           authKey: 'GMICJK_FTP'
         },
-        cache: 'sftpCache.json',
         src: '<%= config.dist %>/',
         dest: 'jakarta/',
-        exclusions: ['<%= config.dist %>/**/.DS_Store', '<%= config.dist %>/**/Thumbs.db', '<%= config.dist %>/tmp'],
-        serverSep: '/',
-        concurrency: 4,
-        progress: true
+        exclusions: ['<%= config.dist %>/**/.DS_Store', '<%= config.dist %>/**/Thumbs.db', '<%= config.dist %>/tmp']
       }
     },
 
@@ -513,6 +509,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('deploy', [
     'build',
-    'sftp-deploy'
+    'ftp-deploy'
   ]);
 };
