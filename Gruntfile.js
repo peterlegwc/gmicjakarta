@@ -252,9 +252,9 @@ module.exports = function (grunt) {
     'sftp-deploy': {
       build: {
         auth: {
-          host: '54.249.235.17',
-          port: 40022,
-          authKey: 'GMICJK_SFTP'
+          host: '116.251.205.74',
+          port: 21,
+          authKey: 'GMICJK_FTP'
         },
         cache: 'sftpCache.json',
         src: '<%= config.dist %>/',
