@@ -4,23 +4,9 @@
   background-repeat: no-repeat;
   background-position: center top;
 }
-.bg-strip.speakers {
-  background-image: url('../images/speakers-panel.jpg');
-  min-height: 100px;
-  @media (min-width: $screen-sm-min) {
-    min-height: 400px;
-  }
-}
-.bg-strip.topics {
-  background-image: url('../images/section_topics.jpg');
-  background-position: center 35%;
-}
 .bg-strip.jumbotron {
   background-image: url('../images/photo_jkskyline.jpg');
   background-position: center 20%;
   margin-bottom: 0px;
   min-height: 300px;
-}
-.bg-strip.gstartup {
-  background-image: url('../images/section_gstartup.jpg');
 }

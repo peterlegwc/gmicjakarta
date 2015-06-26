@@ -27,6 +27,10 @@ angular
         title: 'Passes and Prices',
         templateUrl: 'views/passes-prices.html'
       })
+      .when('/speakers', {
+        title: 'Speakers',
+        templateUrl: 'views/speakers.html'
+      })
       .otherwise({
         redirectTo: '/'
       });

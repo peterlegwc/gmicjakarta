@@ -78,7 +78,7 @@ angular.module('gmicjkApp')
       {
         name: 'GMIC São Paulo',
         city: 'São Paulo',
-        date: 'November, 2015',
+        date: 'November 17, 2015',
         img: 'images/gmics/gmic-saopaulo.png',
         url: ''
       },
