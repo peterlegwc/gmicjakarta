@@ -1,0 +1,12 @@
+<div id="fs-speaker" class="fs-dialog">
+  <div class="fs-dialog-overlay"></div>
+  <div class="fs-dialog-content shadow-accent">
+    <button type="button" class="close" data-dialog-close aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <img ng-src="/images/speakers/{{ FirstName.toLowerCase() }}-{{ LastName.toLowerCase() }}.jpg" alt="{{ FirstName }} {{ LastName }}">
+    <h4 class="color-primary">{{ FirstName }} {{ LastName }} <a ng-href="https://twitter.com/{{ Twitter }}" ng-if="Twitter"><i class="fa fa-twitter color-primary" aria-hidden="true"></i></a></h4>
+    <div>
+      <p class="color-spacegrey">{{ JobTitle }}, <strong>{{ Company }}</strong></p>
+    </div>
+    <div ng-bind-html="Bio" class="text-left"></div>
+  </div>
+</div>

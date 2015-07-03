@@ -19,16 +19,16 @@ angular.module('gmicjkApp')
             angular.element('.fs-dialog').removeClass('fs-dialog-open fs-dialog-close'); // ensure classes are removed
             var speaker;
             scope.speakers.forEach(function(el) {
-              if (el.speakerId === newVal) {
+              if (el.SpeakerId === newVal) {
                 speaker = el;
               }
             });
-            scope.firstName = speaker.firstName;
-            scope.lastName = speaker.lastName;
-            scope.bio = speaker.bio;
-            scope.jobTitle = speaker.jobTitle;
-            scope.company = speaker.company;
-            scope.twitter = speaker.twitter;
+            scope.FirstName = speaker.FirstName;
+            scope.LastName = speaker.LastName;
+            scope.Bio = speaker.Bio;
+            scope.JobTitle = speaker.JobTitle;
+            scope.Company = speaker.Company;
+            scope.Twitter = speaker.Twitter;
 
             var closeDialog = function() {
               angular.element('.fs-dialog').removeClass('fs-dialog-open').addClass('fs-dialog-close').delay(250).queue(function() {

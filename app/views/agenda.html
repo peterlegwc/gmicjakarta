@@ -1,0 +1,58 @@
+<section id="agenda">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-3 col-sm-6">
+        <h3 class="color-primary text-center text-thin no-tmg">Agenda</h3>
+        <div class="text-small text-center">Tuesday, August 11, 2015</div>
+      </div>
+    </div>
+    <div class="spinner-page" ng-if="!loaded">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+    <div class="sessions">
+      <div class="row repeat-fade" ng-repeat="session in agenda | orderBy: orderByDate">
+        <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 session" ng-class="{last:$last}">
+          <div class="col-xs-3 col-sm-2 col-md-2 time text-right color-spacegrey" ng-click="toggleDesc()">
+            <div ng-bind="parseDate(session.StartTime) | date:'shortTime'"></div>
+            <div ng-if="session.EndTime" ng-bind="parseDate(session.EndTime) | date:'shortTime'"></div>
+          </div>
+          <div class="col-xs-9 col-sm-8 col-md-9 info" ng-click="toggleDesc()">
+            <h4 class="title color-spacegrey no-vmg" ng-class="{break:session.Format=='Break'}" ng-bind="session.Name"></h4>
+            <div class="ng-slideInOut" ng-show="session.show">
+              <div class="text-small" ng-if="session.Desc || session.TopicId">
+                <div ng-if="session.Desc">
+                  <span class="color-primary">Description:</span>
+                  <p ng-bind-html="session.Desc"></p>
+                </div>
+                <div ng-if="!session.Desc">
+                  <span class="color-primary">Topic:</span>
+                  <p ng-if="!session.Desc" ng-bind-html="session.Jk15Topics_by_TopicId.Desc"></p>
+                </div>
+              </div>
+            </div>
+            <div ng-if="session.Speakers_by_Jk15SessionModerators.length > 0" class="text-small">
+              <span class="color-primary" ng-if="session.SessionId == 1">Host:</span>
+              <span class="color-primary" ng-if="session.Speakers_by_Jk15SessionModerators.length > 1">Moderators:</span>
+              <span class="color-primary" ng-if="session.Speakers_by_Jk15SessionModerators.length == 1 && session.SessionId != 1">Moderator:</span>
+              <ul class="list-unstyled">
+                <li ng-repeat="moderator in session.Speakers_by_Jk15SessionModerators | orderBy: 'LastName'">{{ moderator.FirstName }} {{ moderator.LastName }}, {{ moderator.JobTitle }}, <strong>{{ moderator.Company }}</strong></li>
+              </ul>
+            </div>
+            <div ng-if="session.Speakers_by_Jk15SessionSpeakers.length > 0" class="text-small">
+              <span class="color-primary" ng-if="session.Speakers_by_Jk15SessionSpeakers.length > 1">Speakers:</span>
+              <span class="color-primary" ng-if="session.Speakers_by_Jk15SessionSpeakers.length == 1">Speaker:</span>
+              <ul class="list-unstyled">
+                <li ng-repeat="speaker in session.Speakers_by_Jk15SessionSpeakers | orderBy: 'LastName'">{{ speaker.FirstName }} {{ speaker.LastName }}, {{ speaker.JobTitle }}, <strong>{{ speaker.Company }}</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="hidden-xs col-sm-2 col-md-1 format" ng-click="toggleDesc()">
+            <div class="color-spacegrey" ng-bind="session.Format"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

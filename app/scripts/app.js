@@ -14,8 +14,11 @@ angular
     'ngResource',
     'leaflet-directive',
     'ngAnimate',
-    'ngSanitize'
+    'ngSanitize',
+    'ngDreamFactory'
   ])
+  .constant('DSP_URL', 'https://dsp-gmic.cloud.dreamfactory.com')
+  .constant('DSP_API_KEY', 'gmicjk15')
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
@@ -27,9 +30,15 @@ angular
         title: 'Passes and Prices',
         templateUrl: 'views/passes-prices.html'
       })
+      .when('/agenda', {
+        title: 'Agenda',
+        templateUrl: 'views/agenda.html',
+        controller: 'AgendaCtrl'
+      })
       .when('/speakers', {
         title: 'Speakers',
-        templateUrl: 'views/speakers.html'
+        templateUrl: 'views/speakers.html',
+        controller: 'SpeakersCtrl'
       })
       .otherwise({
         redirectTo: '/'
