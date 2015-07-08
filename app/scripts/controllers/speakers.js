@@ -18,10 +18,12 @@ angular.module('gmicjkApp')
     $scope.speakers = [];
     var tempData = [];
     var uniqueSpeakers = [];
+
     $scope.$on('api:ready', function() {
       $rootScope.apiReady = true;
       $scope.$broadcast('getSpeakers');
     });
+    
     var getSpeakers = function() {
       DreamFactory.api.db.getRecords(req,
         function(data) {

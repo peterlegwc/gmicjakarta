@@ -52,4 +52,7 @@ angular
         $rootScope.title = current.$$route.title;
       }
     });
+    $rootScope.$on('api:ready', function() {
+      $rootScope.apiReady = true;
+    });
   }]);
