@@ -2,7 +2,7 @@
 <html class="no-js" ng-app="gmicjkApp">
   <head>
     <meta charset="utf-8">
-    <title>GMIC Jakarta</title>
+    <title ng-bind="title + ' - GMIC New York'"></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta property="og:title" content="GMIC Jakarta" />
@@ -39,7 +39,13 @@
         <div class="collapse navbar-collapse" id="gmicjk-navbar">
           <ul class="nav navbar-nav navbar-right" auto-active>
             <li><a href="/">Home</a></li>
-            <li><a href="/agenda">Agenda</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Agenda <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/agenda">Main Stage</a></li>
+                <li><a href="/tech-agenda">Technical Stage</a></li>
+              </ul>
+            </li>
             <li><a href="/speakers">Speakers</a></li>
             <li><a href="/passes-prices"><span>Register</span></a></li>
           </ul>

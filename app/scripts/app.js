@@ -35,6 +35,11 @@ angular
         templateUrl: 'views/agenda.html',
         controller: 'AgendaCtrl'
       })
+      .when('/tech-agenda', {
+        title: 'Technical Stage Agenda',
+        templateUrl: 'views/agenda.html',
+        controller: 'AgendaCtrl'
+      })
       .when('/speakers', {
         title: 'Speakers',
         templateUrl: 'views/speakers.html',

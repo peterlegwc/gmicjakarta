@@ -26,12 +26,6 @@
     &:hover img {
       transform: scale3d(1.2, 1.2, 1);
     }
-    &:hover .caption .details {
-      padding: 0 5px 5px;
-      max-height: 500px;
-      opacity: 1;
-      @extend .transition-fast;
-    }
     .caption {
       font-weight: 200;
       z-index: 200;
@@ -49,10 +43,6 @@
       .details {
         padding: 0px;
         font-size: 12px;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        @extend .transition-fast;
       }
     }
   }

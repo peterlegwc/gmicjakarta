@@ -9,11 +9,24 @@
  */
 angular.module('gmicjkApp')
   .controller('AgendaCtrl', ['$scope','$rootScope','$timeout','DreamFactory',function ($scope,$rootScope,$timeout,DreamFactory) {
-    var req = {
-      table_name: 'Jk15Sessions',
-      related: 'Speakers_by_Jk15SessionSpeakers,Speakers_by_Jk15SessionModerators,Jk15Topics_by_TopicId'
-    };
+    var req;
 
+    if ($scope.title === 'Technical Stage Agenda') {
+      req = {
+        table_name: 'Jk15Sessions',
+        related: 'Speakers_by_Jk15SessionSpeakers,Speakers_by_Jk15SessionModerators,Jk15Topics_by_TopicId',
+        filter: 'Stage = \'all\' OR Stage = \'tech\''
+      };
+    }
+    else {
+      req = {
+        table_name: 'Jk15Sessions',
+        related: 'Speakers_by_Jk15SessionSpeakers,Speakers_by_Jk15SessionModerators,Jk15Topics_by_TopicId',
+        filter: 'Stage = \'all\' OR Stage = \'main\''
+      };
+    }
+
+    console.log($scope.title);
     $scope.loaded = false;
     $scope.agenda = [];
 
