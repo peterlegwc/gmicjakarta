@@ -26,7 +26,6 @@ angular.module('gmicjkApp')
       };
     }
 
-    console.log($scope.title);
     $scope.loaded = false;
     $scope.agenda = [];
 
@@ -40,6 +39,7 @@ angular.module('gmicjkApp')
         function(data) {
           $scope.loaded = true;
           $scope.agenda = data.record;
+          console.log($scope.agenda);
         },
         function(error) {
           console.log(error);

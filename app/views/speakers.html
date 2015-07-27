@@ -11,7 +11,7 @@
         <li class="col-xs-6 col-sm-3 repeat-fade" ng-repeat="speaker in speakers | orderBy: 'LastName'">
           <a role="button" ng-click="setDialog()">
             <div class="box shadow-accent">
-              <img ng-src="/images/speakers/{{ speaker.FirstName.toLowerCase() }}-{{ speaker.LastName.toLowerCase() }}.jpg" alt="{{ speaker.FirstName }} {{ speaker.LastName }}" class="img-responsive">
+              <img ng-src="/images/speakers/{{ convertName(speaker.FirstName) }}-{{ convertName(speaker.LastName) }}.jpg" alt="{{ speaker.FirstName }} {{ speaker.LastName }}" class="img-responsive">
               <div class="caption">
                 <h5>{{ speaker.FirstName }} {{ speaker.LastName }}</h5>
                 <div class="details">

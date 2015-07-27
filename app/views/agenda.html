@@ -16,7 +16,7 @@
     </div>
     <div class="sessions">
       <div class="row repeat-fade" ng-repeat="session in agenda | orderBy: orderByDate">
-        <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 session" ng-class="{last:$last}">
+        <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 session session-{{session.SessionId}}" ng-class="{last:$last}">
           <div class="col-xs-3 col-sm-2 col-md-2 time text-right color-spacegrey" ng-click="toggleDesc()">
             <div ng-bind="parseDate(session.StartTime) | date:'shortTime'"></div>
             <div ng-if="session.EndTime" ng-bind="parseDate(session.EndTime) | date:'shortTime'"></div>

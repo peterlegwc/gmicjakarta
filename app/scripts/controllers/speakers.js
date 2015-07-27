@@ -23,7 +23,7 @@ angular.module('gmicjkApp')
       $rootScope.apiReady = true;
       $scope.$broadcast('getSpeakers');
     });
-    
+
     var getSpeakers = function() {
       DreamFactory.api.db.getRecords(req,
         function(data) {
@@ -60,5 +60,8 @@ angular.module('gmicjkApp')
     $scope.currentSpeaker = -1;
     $scope.setDialog = function() {
       $scope.currentSpeaker = this.speaker.SpeakerId;
+    };
+    $scope.convertName = function(name) {
+      return name.replace(/\s+/g, '-').toLowerCase();
     };
   }]);
