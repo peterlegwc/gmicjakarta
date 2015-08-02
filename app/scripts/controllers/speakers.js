@@ -30,15 +30,15 @@ angular.module('gmicjkApp')
           $scope.loaded = true;
           tempData = data.record;
           tempData.forEach(function(element,index,array) {
-            $scope.speakers = $scope.speakers.concat(element.Speakers_by_Jk15SessionSpeakers);
-            $scope.speakers = $scope.speakers.concat(element.Speakers_by_Jk15SessionModerators);
+            uniqueSpeakers = uniqueSpeakers.concat(element.Speakers_by_Jk15SessionSpeakers);
+            uniqueSpeakers = uniqueSpeakers.concat(element.Speakers_by_Jk15SessionModerators);
           });
-          $scope.speakers.forEach(function(element,index,array) {
-            if (uniqueSpeakers.indexOf(element.SpeakerId) >= 0) {
-              $scope.speakers.splice(index,1);
+          uniqueSpeakers.forEach(function(element,index,array) {
+            if (arrayObjectIndexOf($scope.speakers, element.SpeakerId, 'SpeakerId') >= 0) {
+              uniqueSpeakers.splice(index,1);
             }
             else {
-              uniqueSpeakers.push(element.SpeakerId);
+              $scope.speakers.push(element);
             }
           });
         },
@@ -62,6 +62,17 @@ angular.module('gmicjkApp')
       $scope.currentSpeaker = this.speaker.SpeakerId;
     };
     $scope.convertName = function(name) {
-      return name.replace(/\s+/g, '-').toLowerCase();
+      if (name) {
+        return name.replace(/\s+/g, '-').toLowerCase();
+      }
     };
+    function arrayObjectIndexOf(myArray, searchTerm, property) {
+      for(var i = 0, len = myArray.length; i < len; i++) {
+        if (myArray[i][property] === searchTerm) {
+          return i;
+        }
+      }
+      return -1;
+    }
+
   }]);

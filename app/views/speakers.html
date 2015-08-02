@@ -8,7 +8,7 @@
         <div class="bounce3"></div>
       </div>
       <ul class="list-unstyled speakers-grid">
-        <li class="col-xs-6 col-sm-3 repeat-fade" ng-repeat="speaker in speakers | orderBy: 'LastName'">
+        <li ng-repeat="speaker in speakers | orderBy: 'LastName'" class="col-xs-6 col-sm-3 repeat-fade speaker-{{ speaker.SpeakerId }}">
           <a role="button" ng-click="setDialog()">
             <div class="box shadow-accent">
               <img ng-src="/images/speakers/{{ convertName(speaker.FirstName) }}-{{ convertName(speaker.LastName) }}.jpg" alt="{{ speaker.FirstName }} {{ speaker.LastName }}" class="img-responsive">

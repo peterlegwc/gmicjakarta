@@ -40,14 +40,14 @@
               <span class="color-primary" ng-if="session.Speakers_by_Jk15SessionModerators.length > 1">Moderators:</span>
               <span class="color-primary" ng-if="session.Speakers_by_Jk15SessionModerators.length == 1 && session.SessionId != 1">Moderator:</span>
               <ul class="list-unstyled">
-                <li ng-repeat="moderator in session.Speakers_by_Jk15SessionModerators | orderBy: 'LastName'">{{ moderator.FirstName }} {{ moderator.LastName }}, {{ moderator.JobTitle }}, <strong>{{ moderator.Company }}</strong></li>
+                <li ng-repeat="moderator in session.Speakers_by_Jk15SessionModerators | orderBy: 'LastName'" class="mod-{{ moderator.SpeakerId}}" class="moderator-{{ moderator.SpeakerId }}">{{ moderator.FirstName }} {{ moderator.LastName }}, {{ moderator.JobTitle }}, <strong>{{ moderator.Company }}</strong></li>
               </ul>
             </div>
             <div ng-if="session.Speakers_by_Jk15SessionSpeakers.length > 0" class="text-small">
               <span class="color-primary" ng-if="session.Speakers_by_Jk15SessionSpeakers.length > 1">Speakers:</span>
               <span class="color-primary" ng-if="session.Speakers_by_Jk15SessionSpeakers.length == 1">Speaker:</span>
               <ul class="list-unstyled">
-                <li ng-repeat="speaker in session.Speakers_by_Jk15SessionSpeakers | orderBy: 'LastName'">{{ speaker.FirstName }} {{ speaker.LastName }}, {{ speaker.JobTitle }}, <strong>{{ speaker.Company }}</strong></li>
+                <li ng-repeat="speaker in session.Speakers_by_Jk15SessionSpeakers | orderBy: 'LastName'" class="speaker-{{ speaker.SpeakerId }}">{{ speaker.FirstName }} {{ speaker.LastName }}, {{ speaker.JobTitle }}, <strong>{{ speaker.Company }}</strong></li>
               </ul>
             </div>
           </div>

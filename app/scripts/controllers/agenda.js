@@ -39,7 +39,7 @@ angular.module('gmicjkApp')
         function(data) {
           $scope.loaded = true;
           $scope.agenda = data.record;
-          console.log($scope.agenda);
+          // console.log($scope.agenda);
         },
         function(error) {
           console.log(error);
@@ -57,8 +57,10 @@ angular.module('gmicjkApp')
     }
 
     $scope.parseDate = function(mySqlDate) {
-      var d = mySqlDate.split(/[- :]/);
-      return new Date(d[0], d[1]-1, d[2], d[3] || 0, d[4] || 0, d[5] || 0);
+      if (mySqlDate) {
+        var d = mySqlDate.split(/[- :]/);
+        return new Date(d[0], d[1]-1, d[2], d[3] || 0, d[4] || 0, d[5] || 0);
+      }
     };
     $scope.orderByDate = function (item) {
       return $scope.parseDate(item.StartTime);
