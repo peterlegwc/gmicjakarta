@@ -29,9 +29,4 @@ $(document).ready(function() {
       'scrollTop': $(target).offset().top
     }, 900, 'swing');
   });
-
-  // handle mobile menu clicks to deal with Angular
-  $('body').on('click', '#gmicjk-navbar.navbar-collapse.collapse.in a', function() {
-    $('#gmicjk-navbar').collapse('toggle');
-  });
 });
