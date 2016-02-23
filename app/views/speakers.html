@@ -15,7 +15,7 @@
               <div class="caption">
                 <h5>{{ speaker.FirstName }} {{ speaker.LastName }}</h5>
                 <div class="details">
-                  {{ speaker.JobTitle }}, {{ speaker.Company }}
+                  <span ng-if="speaker.JobTitle">{{ speaker.JobTitle }},</span> {{ speaker.Company }}
                 </div>
               </div>
             </div>

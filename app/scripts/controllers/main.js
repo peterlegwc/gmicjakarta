@@ -80,7 +80,7 @@ angular.module('gmicjkApp')
         city: 'São Paulo',
         date: 'November 17, 2015',
         img: 'images/gmics/gmic-saopaulo.png',
-        url: ''
+        url: '//saopaulo.thegmic.com'
       },
       {
         name: 'GMIC Taipei',
