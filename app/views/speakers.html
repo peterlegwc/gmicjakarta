@@ -1,17 +1,18 @@
 <section id="speakers">
   <div class="container">
     <div class="row">
-      <h3 class="color-primary text-center text-thin no-tmg">Speakers</h3>
+      <h3 class="color-primary text-center text-thin no-tmg" ng-bind="title"></h3>
       <div class="spinner-page" ng-if="!loaded">
         <div class="bounce1"></div>
         <div class="bounce2"></div>
         <div class="bounce3"></div>
       </div>
       <ul class="list-unstyled speakers-grid">
-        <li ng-repeat="speaker in speakers | orderBy: 'LastName'" class="col-xs-6 col-sm-3 repeat-fade speaker-{{ speaker.SpeakerId }}">
+        <li ng-repeat="speaker in speakers" class="col-xs-6 col-sm-3 repeat-fade speaker-{{ $index }}">
           <a role="button" ng-click="setDialog()">
             <div class="box shadow-accent">
-              <img ng-src="/images/speakers/{{ convertName(speaker.FirstName) }}-{{ convertName(speaker.LastName) }}.jpg" alt="{{ speaker.FirstName }} {{ speaker.LastName }}" class="img-responsive">
+              <img ng-if="speaker.Picture == 'TRUE'" ng-src="/images/speakers/{{ convertName(speaker.FirstName) }}-{{ convertName(speaker.LastName) }}.jpg" alt="{{ speaker.FirstName }} {{ speaker.LastName }}" class="img-responsive">
+              <img ng-if="speaker.Picture != 'TRUE'" ng-src="/images/speakers/speaker.jpg" alt="{{ speaker.FirstName }} {{ speaker.LastName }}" class="img-responsive">
               <div class="caption">
                 <h5>{{ speaker.FirstName }} {{ speaker.LastName }}</h5>
                 <div class="details">

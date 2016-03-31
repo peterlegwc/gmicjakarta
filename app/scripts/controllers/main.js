@@ -34,61 +34,68 @@ angular.module('gmicjkApp')
     // TODO: Move locations to a separate file so it can be called elsewhere
     $scope.gmics = [
       {
+        name: 'GMIC Tel-Aviv',
+        city: 'Tel-Aviv',
+        date: 'March 22, 2016',
+        img: 'images/gmics/gmic-tlv.png',
+        url: '//telaviv.thegmic.com'
+      },
+      {
         name: 'GMIC Beijing',
         city: 'Beijing',
-        date: 'April 28-30, 2015',
+        date: 'April 28 - May 2, 2016',
         img: 'images/gmics/gmic-beijing.png',
         url: '//beijing.thegmic.com'
       },
       {
-        name: 'GMIC New York',
-        city: 'New York',
-        date: 'June 11, 2015',
-        img: 'images/gmics/gmic-nyc.png',
-        url: '//nyc.thegmic.com'
-      },
-      {
         name: 'GMIC Tokyo',
         city: 'Tokyo',
-        date: 'July 10, 2015',
+        date: 'July 15, 2016',
         img: 'images/gmics/gmic-tokyo.png',
         url: '//tokyo.thegmic.com'
       },
       {
         name: 'GMIC Jakarta',
         city: 'Jakarta',
-        date: 'August 11, 2015',
+        date: 'August 9, 2016',
         img: 'images/gmics/gmic-jakarta.png',
         url: ''
       },
       {
-        name: 'GMIC Bangalore',
-        city: 'Bangalore',
-        date: 'September 9-10, 2015',
-        img: 'images/gmics/gmic-bangalore.png',
-        url: '//bangalore.thegmic.com'
-      },
-      {
-        name: 'GMIC Silicon Valley',
-        city: 'Silicon Valley',
-        date: 'September 28-30, 2015',
-        img: 'images/gmics/gmic-sv.png',
-        url: '//sv.thegmic.com'
-      },
-      {
         name: 'GMIC São Paulo',
         city: 'São Paulo',
-        date: 'November 17, 2015',
+        date: 'August 24, 2016',
         img: 'images/gmics/gmic-saopaulo.png',
         url: '//saopaulo.thegmic.com'
       },
       {
+        name: 'GMIC Silicon Valley',
+        city: 'Silicon Valley',
+        date: 'September 26-28, 2016',
+        img: 'images/gmics/gmic-sv.png',
+        url: '//sv.thegmic.com'
+      },
+      {
         name: 'GMIC Taipei',
         city: 'Taipei',
-        date: 'December 15-16, 2015',
+        date: 'October 7, 2016',
         img: 'images/gmics/gmic-taipei.png',
         url: '//taipei.thegmic.com/'
       },
+      {
+        name: 'GMIC Bangalore',
+        city: 'Bangalore',
+        date: 'November 16-17, 2016',
+        img: 'images/gmics/gmic-bangalore.png',
+        url: '//bangalore.thegmic.com'
+      },
+      {
+        name: 'GMIC Seoul',
+        city: 'Seoul',
+        date: 'December 2016',
+        img: 'images/gmics/gmic-seoul.png',
+        url: ''
+      }
     ];
 
     // TODO: Move leaflet conditional logic into a directive

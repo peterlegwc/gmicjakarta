@@ -8,57 +8,32 @@
  * Controller of the gmicjkApp
  */
 angular.module('gmicjkApp')
-  .controller('AgendaCtrl', ['$scope','$rootScope','$timeout','DreamFactory',function ($scope,$rootScope,$timeout,DreamFactory) {
-    var req;
-
-    if ($scope.title === 'Technical Stage Agenda') {
-      req = {
-        table_name: 'Jk15Sessions',
-        related: 'Speakers_by_Jk15SessionSpeakers,Speakers_by_Jk15SessionModerators,Jk15Topics_by_TopicId',
-        filter: 'Stage = \'all\' OR Stage = \'tech\''
-      };
-    }
-    else {
-      req = {
-        table_name: 'Jk15Sessions',
-        related: 'Speakers_by_Jk15SessionSpeakers,Speakers_by_Jk15SessionModerators,Jk15Topics_by_TopicId',
-        filter: 'Stage = \'all\' OR Stage = \'main\''
-      };
-    }
-
+  .controller('AgendaCtrl', ['$scope','$rootScope','$timeout','Tabletop',function ($scope,$rootScope,$timeout,Tabletop) {
     $scope.loaded = false;
     $scope.agenda = [];
 
-    $scope.$on('api:ready', function() {
-      $rootScope.apiReady = true;
-      $scope.$broadcast('getAgenda');
-    });
-
-    var getAgenda = function() {
-      DreamFactory.api.db.getRecords(req,
-        function(data) {
-          $scope.loaded = true;
-          $scope.agenda = data.record;
-          // console.log($scope.agenda);
-        },
-        function(error) {
-          console.log(error);
-          $timeout(getAgenda, 2000);
-        }
-      );
-    };
-
-    $scope.$on('getAgenda', function() {
-      getAgenda();
-    });
-
-    if (!$scope.loaded && $rootScope.apiReady) {
-      getAgenda();
+    if ($scope.title === '2015 Technical Stage Agenda') {
+      Tabletop.then(function(tdata) {
+        $scope.agenda = tdata[0]['Tech Stage'].all();
+        speakersToArray();
+        $scope.loaded = true;
+      }, function(reason) {
+        console.log('Failed: ' + reason);
+      });
+    }
+    else {
+      Tabletop.then(function(tdata) {
+        $scope.agenda = tdata[0]['Main Stage'].all();
+        speakersToArray();
+        $scope.loaded = true;
+      }, function(reason) {
+        console.log('Failed: ' + reason);
+      });
     }
 
     $scope.parseDate = function(mySqlDate) {
       if (mySqlDate) {
-        var d = mySqlDate.split(/[- :]/);
+        var d = mySqlDate.split(/[-/ :]/);
         return new Date(d[0], d[1]-1, d[2], d[3] || 0, d[4] || 0, d[5] || 0);
       }
     };
@@ -67,5 +42,14 @@ angular.module('gmicjkApp')
     };
     $scope.toggleDesc = function() {
       this.session.show = !this.session.show;
+    };
+    var speakersToArray = function() {
+      if ($scope.agenda.length > 0) {
+        $scope.agenda.forEach(function(item) {
+          if (!Array.isArray(item.Speakers) && item.Speakers) {
+            item.Speakers = item.Speakers.split('\n');
+          }
+        });
+      }
     };
   }]);

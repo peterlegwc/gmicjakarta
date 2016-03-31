@@ -29,7 +29,8 @@ module.exports = function(config) {
       'bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js',
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/angular-dreamfactory/angular-dreamfactory.js',
+      'bower_components/tabletop/src/tabletop.js',
+      'bower_components/angular-tabletop/TabletopProvider.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

@@ -15,11 +15,9 @@ angular
     'leaflet-directive',
     'ngAnimate',
     'ngSanitize',
-    'ngDreamFactory'
+    'times.tabletop'
   ])
-  .constant('DSP_URL', 'https://dsp-gmic.cloud.dreamfactory.com')
-  .constant('DSP_API_KEY', 'gmicjk15')
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($routeProvider, $locationProvider, TabletopProvider) {
     $routeProvider
       .when('/', {
         title: 'Home',
@@ -31,12 +29,12 @@ angular
         templateUrl: 'views/passes-prices.html'
       })
       .when('/agenda', {
-        title: 'Agenda',
+        title: '2015 Main Stage Agenda',
         templateUrl: 'views/agenda.html',
         controller: 'AgendaCtrl'
       })
       .when('/tech-agenda', {
-        title: 'Technical Stage Agenda',
+        title: '2015 Technical Stage Agenda',
         templateUrl: 'views/agenda.html',
         controller: 'AgendaCtrl'
       })
@@ -49,6 +47,10 @@ angular
         redirectTo: '/'
       });
     $locationProvider.html5Mode(true);
+    // Google Sheet: https://docs.google.com/spreadsheets/d/1x06q6o9UzFw9Fr5nsPKF1OK0dp_fhRo8MsBVkAA_Amo/edit#gid=1102852713
+    TabletopProvider.setTabletopOptions({
+      key: 'https://docs.google.com/spreadsheets/d/1x06q6o9UzFw9Fr5nsPKF1OK0dp_fhRo8MsBVkAA_Amo/pubhtml'
+    });
   }).run(['$rootScope', '$location', '$window', function($rootScope, $location, $window) {
     $rootScope.title = 'GMIC Jakarta';
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
@@ -56,8 +58,5 @@ angular
       if (current.hasOwnProperty('$$route')) {
         $rootScope.title = current.$$route.title;
       }
-    });
-    $rootScope.$on('api:ready', function() {
-      $rootScope.apiReady = true;
     });
   }]);

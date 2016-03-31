@@ -8,9 +8,17 @@
 <section id="marketing" class="blurb">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 col-sm-8">
         <p>The world’s most influential conference on mobile comes to Jakarta on August 11th. From Beijing to San Francisco and Tokyo to Bangalore, GMIC is the where the mobile community gathers to learn about the latest innovations and connect with industry thought leaders.</p>
         <p>With the theme "Bringing the Best of the Mobile Internet World to Southeast Asia and Vice Versa," GMIC Jakarta strives to be a leading edge meeting of minds and talents. Mobile is extending far beyond the smartphone into all aspects of our lives. It continues to innovate and change forms from phones and tablets to health, home, cars, smart TVs to robots. Our devices are learning about us and talking amongst themselves to reshape the mobile industry.</p>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <a href="//www.thegmic.com/2016/docs/2016-03-17-gmic-jakarta-prospectus.pdf" class="callout-box">
+          <div class="accent">
+            <h5>Sponsorship <i class="icon fa fa-chevron-circle-right" aria-hidden="true"></i></h5>
+            <p>Interested in sponsoring GMIC Jakarta 2016? Opportunities are available!</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -28,7 +36,7 @@
           <li>G-startup</li>
           <li>AppAttack</li>
         </ul>
-        <a href="/passes-prices" class="btn btn-primary" role="button">Register Today</a>
+        <!-- <a href="/passes-prices" class="btn btn-primary" role="button">Register Today</a> -->
       </div>
       <div class="col-sm-4">
         <img src="images/photo_learn.jpg" alt="Who Should Attend" class="img-responsive shadow-accent">
@@ -54,22 +62,22 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h3 class="text-thin color-spacegrey">Sponsors</h3>
+        <h3 class="text-thin color-spacegrey">Previous Sponsors</h3>
         <h4 class="text-thin color-primary">Top</h4>
       </div>
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-sm-2">
         <a href="http://www.weibo.com" target="_blank"><img src="/images/sponsors/sponsor-weibo.png" alt="Weibo" class="img-responsive center-block"></a>
       </div>
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-sm-2">
         <a href="http://www.kingsoftstore.com/" target="_blank"><img src="/images/sponsors/sponsor-kingsoft.png" alt="Kingsoft" class="img-responsive center-block"></a>
       </div>
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-sm-2">
         <a href="https://www.cmcm.com" target="_blank"><img src="/images/sponsors/sponsor-cheetahmobile.png" alt="Cheetah Mobile" class="img-responsive center-block"></a>
       </div>
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-sm-2">
         <a href="http://www.ucweb.com/" target="_blank"><img src="/images/sponsors/sponsor-ucweb.png" alt="UC Web" class="img-responsive center-block"></a>
       </div>
-      <div class="col-xs-6 col-sm-3">
+      <div class="col-xs-6 col-sm-2">
         <a href="http://www.vserv.com/" target="_blank"><img src="/images/sponsors/sponsor-vserv.png" alt="Vserv" class="img-responsive center-block"></a>
       </div>
     </div>
@@ -87,19 +95,19 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h3 class="text-thin color-spacegrey">Partners</h3>
+        <h3 class="text-thin color-spacegrey">Previous Partners</h3>
       </div>
     </div>
-    <div class="col-xs-4 col-sm-2">
+    <div class="col-xs-6 col-sm-2">
       <a href="http://www.meetup.com/gdgeastbay/"><img src="/images/partners/partner-gdgeastbay.png" alt="GDG East Bay" class="img-responsive center-block" style="width: 100px;"></a>
     </div>
-    <div class="col-xs-4 col-sm-2">
+    <div class="col-xs-6 col-sm-2">
       <img src="/images/partners/partner-gdp.png" alt="GDP Venture" class="img-responsive center-block">
     </div>
-    <div class="col-xs-4 col-sm-2">
+    <div class="col-xs-6 col-sm-2">
       <a href="http://www.kejorahq.com/"><img src="/images/partners/partner-kejora.png" alt="Kejora" class="img-responsive center-block"></a>
     </div>
-    <div class="col-xs-4 col-sm-2">
+    <div class="col-xs-6 col-sm-2">
       <a href="http://tujuhdimensi.com/"><img src="/images/partners/partner-7d.jpg" alt="Seven Dimensions" class="img-responsive center-block" style="padding: 10px 5px; background: #fff"></a>
     </div>
   </div>
@@ -108,7 +116,7 @@
   <div class="container">
     <div class="row">
       <h3 class="color-spacegrey text-center text-thin">GMIC Locations</h3>
-      <div class="col-sm-3" ng-repeat="event in gmics">
+      <div class="col-xs-6 col-sm-2" ng-repeat="event in gmics">
         <div ng-if="event.url">
           <a href="{{ event.url }}"><img ng-src="{{ event.img }}" alt="{{ event.name }}"><h5>{{ event.city }}</h5><span class="text-thin">{{ event.date }}</span></a>
         </div>
