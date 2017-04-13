@@ -17,6 +17,8 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   var modRewrite = require('connect-modrewrite');
+  var serveStatic = require('serve-static');
+  // var serveIndex = require('serve-index');
 
   // Configurable paths
   var config = {
@@ -85,9 +87,9 @@ module.exports = function (grunt) {
           middleware: function(connect) {
             return [
               modRewrite(['^[^\\.]*$ /index.html [L]']),
-              connect.static('.tmp'),
-              connect().use('/bower_components', connect.static('./bower_components')),
-              connect.static(config.app)
+              serveStatic('.tmp'),
+              connect().use('/bower_components', serveStatic('./bower_components')),
+              serveStatic(config.app)
             ];
           }
         }
@@ -98,10 +100,10 @@ module.exports = function (grunt) {
           port: 9001,
           middleware: function(connect) {
             return [
-              connect.static('.tmp'),
-              connect.static('test'),
-              connect().use('/bower_components', connect.static('./bower_components')),
-              connect.static(config.app)
+              serveStatic('.tmp'),
+              serveStatic('test'),
+              connect().use('/bower_components', serveStatic('./bower_components')),
+              serveStatic(config.app)
             ];
           }
         }
@@ -207,8 +209,8 @@ module.exports = function (grunt) {
       app: {
         ignorePath: /^\/|\.\.\//,
         src: ['<%= config.app %>/index.html'],
-        exclude: ['bower_components/font-awesome/css/font-awesome.css','bower_components/leaflet/dist/leaflet-src.js']
-        // exclude: ['bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js']
+        exclude: ['bower_components/font-awesome/css/font-awesome.css']
+        // exclude: ['bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js','bower_components/leaflet/dist/leaflet-src.js']
       },
       test: {
         devDependencies: true,

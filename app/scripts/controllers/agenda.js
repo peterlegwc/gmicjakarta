@@ -9,6 +9,16 @@
  */
 angular.module('gmicjkApp')
   .controller('AgendaCtrl', ['$scope','$rootScope','$timeout','Tabletop',function ($scope,$rootScope,$timeout,Tabletop) {
+    var speakersToArray = function() {
+      if ($scope.agenda.length > 0) {
+        $scope.agenda.forEach(function(item) {
+          if (!Array.isArray(item.Speakers) && item.Speakers) {
+            item.Speakers = item.Speakers.split('\n');
+          }
+        });
+      }
+    };
+    
     $scope.loaded = false;
     $scope.agenda = [];
 
@@ -43,13 +53,5 @@ angular.module('gmicjkApp')
     $scope.toggleDesc = function() {
       this.session.show = !this.session.show;
     };
-    var speakersToArray = function() {
-      if ($scope.agenda.length > 0) {
-        $scope.agenda.forEach(function(item) {
-          if (!Array.isArray(item.Speakers) && item.Speakers) {
-            item.Speakers = item.Speakers.split('\n');
-          }
-        });
-      }
-    };
+    
   }]);
